@@ -60,11 +60,12 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1' // Is it correct ?? 74 -15
 
+
     // Retrofit
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0' // get data
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // convert json
-
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
     // Using Coil for image loading
     implementation'io.coil-kt:coil-compose:1.4.0'
 
