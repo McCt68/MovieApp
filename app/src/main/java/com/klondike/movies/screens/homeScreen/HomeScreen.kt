@@ -2,6 +2,7 @@ package com.klondike.movies.screens.homeScreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
@@ -35,7 +36,11 @@ fun Content(
 
 		var state = viewModel.moviesState
 
-		LazyColumn(modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(16.dp)) {
+		LazyColumn(
+			modifier = Modifier
+				.fillMaxHeight(0.8f),
+			contentPadding = PaddingValues(16.dp)
+		) {
 			items(state.movies.size) { index ->
 				var movie = state.movies[index]
 				MovieItem(movie = movie)

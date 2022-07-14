@@ -1,6 +1,9 @@
 package com.klondike.movies.data.api.model
 
+// const val  IMAGE_PATH_PREFIX_DEFAULT: String = "https://image.tmdb.org/t/p/w300"
+
 data class ApiMovie(
+
     val adult: Boolean,
     val backdrop_path: String,
     val genre_ids: List<Int>,
