@@ -9,7 +9,7 @@ import androidx.navigation.NavController
 fun DetailsScreen(passedNavController: NavController) {
 	Column() {
 		Text(text = "I am detailsScreen")
-		
+
 	}
 
 }
