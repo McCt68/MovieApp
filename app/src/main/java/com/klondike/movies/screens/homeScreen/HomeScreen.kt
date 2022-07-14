@@ -20,23 +20,23 @@ import com.klondike.movies.data.repository.MoviesRepository
 
 @Composable
 fun HomeScreen(passedNavController: NavHostController) {
-	Scaffold(
-		content = { Content(passedNavController) })
+    Scaffold(
+        content = { Content(passedNavController) })
 }
 
 
 @Composable
 fun Content(
 	passedNavController: NavHostController,
-	// viewModel: HomeScreenViewModel = hiltViewModel()
+	viewModel: HomeScreenViewModel = hiltViewModel(),
 ) {
-	Column() {
-		Text(text = "Just testing")
-		Button(onClick = { passedNavController.navigate("details_screen") }) {
-			Text(text = "Navigate to other screen")
-		}
+    Column() {
+        Text(text = "Just testing")
+        Button(onClick = { passedNavController.navigate("details_screen") }) {
+            Text(text = "Navigate to other screen")
+        }
 
-		// Testing LazyColumn
+        // Testing LazyColumn
 //		val viewModel: HomeScreenViewModel = HomeScreenViewModel
 //		val movies = viewModel.moviesState
 //
@@ -46,7 +46,7 @@ fun Content(
 //
 //			}
 //		}
-	}
+    }
 }
 
 @Composable
