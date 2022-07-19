@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.klondike.movies.screens.detailsScreen.DetailsScreen
 import com.klondike.movies.screens.homeScreen.HomeScreen
+import com.klondike.movies.screens.settingsScreen.SettingsScreen
 
 
 // Here I  build a navigation controller -
@@ -27,7 +28,10 @@ fun MainNavigator() {
 			HomeScreen(myNavController)
 		}
 		composable(route = "details_screen"){
-			DetailsScreen(myNavController)
+			DetailsScreen()
+		}
+		composable("settings_screen") {
+			SettingsScreen()
 		}
 	}
 }
