@@ -1,5 +1,6 @@
 package com.klondike.movies.screens.homeScreen
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -38,7 +39,7 @@ fun HomeScreen(passedNavController: NavHostController) {
 				),
 				BottomNavItem(
 					name = "Details",
-					route = "details_screen",
+					route = "details_screen/{movieId}",
 					icon = Icons.Default.Notifications,
 					badgeCount = 52 // could change this to likes or something else
 				),
@@ -67,7 +68,6 @@ fun Content(
 //			Text(text = "Navigate to other screen")
 //		}
 
-
 		var state = viewModel.moviesState
 
 		LazyColumn(
@@ -77,7 +77,10 @@ fun Content(
 		) {
 			items(state.movies.size) { index ->
 				var movie = state.movies[index]
-				MovieItem(movie = movie)
+				MovieItem(movie = movie){
+					passedNavController.navigate("details_screen/${movie.id}")
+					Log.d("onClick", "Content: I was clicked")
+				}
 
 			}
 		}

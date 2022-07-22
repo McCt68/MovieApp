@@ -1,6 +1,7 @@
 package com.klondike.movies.screens.homeScreen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,7 +21,8 @@ const val IMAGE_PATH_PREFIX_DEFAULT: String = "https://image.tmdb.org/t/p/w300"
 @Composable
 fun MovieItem(
 	movie: ApiMovie,
-	modifier: Modifier = Modifier
+	modifier: Modifier = Modifier,
+	onMovieClick: (ApiMovie) -> Unit
 ) {
 
 
@@ -28,6 +30,7 @@ fun MovieItem(
 		modifier = Modifier
 			.padding(8.dp)
 			.height(160.dp)
+			.clickable { onMovieClick.invoke(movie) }
 	) {
 		Column {
 			Modifier

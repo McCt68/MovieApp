@@ -1,9 +1,12 @@
 package com.klondike.movies.navigation
 
+// import androidx.navigation.navArgument
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.klondike.movies.screens.detailsScreen.DetailsScreen
 import com.klondike.movies.screens.homeScreen.HomeScreen
 import com.klondike.movies.screens.settingsScreen.SettingsScreen
@@ -22,13 +25,32 @@ fun MainNavigator() {
 	// and a route of type string for each screen it will navigate too
 	// The function that is passed as startDestination takes a myNavController object as argument -
 	//
-	NavHost(navController = myNavController, startDestination = "home_screen"){
 
-		composable(route = "home_screen"){
+	// COMMENTED OUT AS I TEST PASSING ARGUMENTS
+//	NavHost(navController = myNavController, startDestination = "home_screen"){
+//
+//		composable(route = "home_screen"){
+//			HomeScreen(myNavController)
+//		}
+
+	NavHost(navController = myNavController, startDestination = "home_screen") {
+
+		// HomeScreen
+		composable(route = "home_screen")
+		{
 			HomeScreen(myNavController)
 		}
-		composable(route = "details_screen"){
-			DetailsScreen()
+		// DetailsScreen - Trying to pass arguments to details screen
+		composable(
+			route = "details_screen/{movieId}",
+			arguments = listOf(navArgument(name = "movieId") { type = NavType.StringType
+			nullable = true
+			})
+		) { backStackEntry ->
+			DetailsScreen(
+				passedNavController = myNavController,
+				movieId = backStackEntry.arguments?.getString("movieId"))
+
 		}
 		composable("settings_screen") {
 			SettingsScreen()
