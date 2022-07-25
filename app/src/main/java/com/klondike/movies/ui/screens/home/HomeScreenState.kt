@@ -1,4 +1,4 @@
-package com.klondike.movies.screens.homeScreen
+package com.klondike.movies.ui.screens.home
 
 import com.klondike.movies.data.api.model.ApiMovie
 

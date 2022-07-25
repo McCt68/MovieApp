@@ -1,4 +1,4 @@
-package com.klondike.movies.screens.settingsScreen
+package com.klondike.movies.ui.screens.settings
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

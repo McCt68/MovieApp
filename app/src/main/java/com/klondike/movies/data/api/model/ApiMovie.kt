@@ -1,20 +1,39 @@
 package com.klondike.movies.data.api.model
 
-// const val  IMAGE_PATH_PREFIX_DEFAULT: String = "https://image.tmdb.org/t/p/w300"
+import com.google.gson.annotations.SerializedName
+
 
 data class ApiMovie(
     val id: Int,
     val adult: Boolean,
-    val backdrop_path: String,
-    val genre_ids: List<Int>?,
-    val original_language: String,
-    val original_title: String,
-    val overview: String, // show this
+    @SerializedName("backdrop_path")
+    val backdropPath: String,
+    @SerializedName("genre_ids")
+    val genreIds: List<Int>?,
+    @SerializedName("original_language")
+    val originalLanguage: String,
+    @SerializedName("original_title")
+    val originalTitle: String,
+    val overview: String,
     val popularity: Double,
-    val poster_path: String,
-    val release_date: String,
-    val title: String, // show this
+    @SerializedName("poster_path")
+    private val posterPath: String,
+    @SerializedName("release_date")
+    val releaseDate: String,
+    val title: String,
     val video: Boolean,
-    val vote_average: Double,
-    val vote_count: Int
-)
+    @SerializedName("vote_average")
+    val voteAverage: Double,
+    @SerializedName("vote_count")
+    val voteCount: Int,
+) {
+
+    val image: String
+        get() = IMAGE_PATH_PREFIX_DEFAULT.plus(posterPath)
+
+    companion object {
+        private const val IMAGE_PATH_PREFIX_DEFAULT: String = "https://image.tmdb.org/t/p/w300"
+    }
+
+
+}

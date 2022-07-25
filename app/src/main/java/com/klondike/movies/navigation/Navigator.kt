@@ -7,9 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.klondike.movies.screens.detailsScreen.DetailsScreen
-import com.klondike.movies.screens.homeScreen.HomeScreen
-import com.klondike.movies.screens.settingsScreen.SettingsScreen
+import com.klondike.movies.ui.screens.details.DetailsScreen
+import com.klondike.movies.ui.screens.home.HomeScreen
+import com.klondike.movies.ui.screens.settings.SettingsScreen
 
 
 // Here I  build a navigation controller -

@@ -1,4 +1,4 @@
-package com.klondike.movies.screens.detailsScreen
+package com.klondike.movies.ui.screens.details
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
